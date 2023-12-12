@@ -53,8 +53,8 @@ Skydome::Vertex::Vertex(const Vector3f& p)
     Vector3f pn = p;
     pn.Normalize();
 
-    Tex.x = asinf(pn.x) / (float)M_PI + 0.5f;
-    Tex.y = asinf(pn.y) / (float)M_PI + 0.5f;
+    Tex.x = pn.x;// asinf(pn.x) / (float)M_PI + 0.5f;
+    Tex.y = pn.y;// asinf(pn.y) / (float)M_PI + 0.5f;
 }
 
 
@@ -161,7 +161,7 @@ void Skydome::Render(const BasicCamera& Camera)
     Matrix4f Rotate;
 
     static float foo = 0.0f;
-    foo += 0.02f;
+   // foo += 0.02f;
     Rotate.InitRotateTransform(0.0f, foo, 0.0f);
     Matrix4f World;
     World.InitTranslationTransform(Camera.GetPos() - Vector3f(0.0f, 0.2f, 0.0f));

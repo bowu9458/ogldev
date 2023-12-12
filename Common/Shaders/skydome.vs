@@ -7,6 +7,7 @@ uniform mat4 gWVP = mat4(1.0);
 
 out vec2 TexCoords0;
 out float Height;
+out vec3 newPos;
 
 void main()
 {
@@ -14,4 +15,5 @@ void main()
     gl_Position.z = gl_Position.w;
     Height = Position.y;
     TexCoords0 = TexCoords;
+    newPos = Position;
 }
