@@ -66,7 +66,7 @@ void BaseTerrain::InitTerrain(float WorldScale, float TextureScale, const std::v
     }
 
 
-    m_pSkydome = new Skydome(8, 32, 1.0f, "../Content/textures/kloofendal_48d_partly_cloudy_puresky_4k.jpg", COLOR_TEXTURE_UNIT_0, COLOR_TEXTURE_UNIT_INDEX_0);
+    m_pSkydome = new Skydome(8, 32, 10.0f, "../Content/textures/kloofendal_48d_partly_cloudy_puresky_4k.jpg", COLOR_TEXTURE_UNIT_0, COLOR_TEXTURE_UNIT_INDEX_0);
 }
 
 
@@ -170,7 +170,7 @@ void BaseTerrain::Render(const BasicCamera& Camera)
 	
     m_terrainTech.SetLightDir(m_lightDir);
 
-    m_geomipGrid.Render(Camera.GetPos(), VP);
+   // m_geomipGrid.Render(Camera.GetPos(), VP);
 
     m_pSkydome->Render(Camera);
 }
