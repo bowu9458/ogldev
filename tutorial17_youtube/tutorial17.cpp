@@ -181,7 +181,7 @@ void Tutorial17::RenderSceneCB()
     pGameCamera->OnRender();
 
 #ifdef _WIN64
-    float YRotationAngle = 0.1f;
+    float YRotationAngle = 0.01f;
 #else
     float YRotationAngle = 1.0f;
 #endif

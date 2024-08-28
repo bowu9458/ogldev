@@ -33,8 +33,8 @@
 #include "lighting_technique.h"
 #include "ogldev_engine_common.h"
 
-#define WINDOW_WIDTH  1920
-#define WINDOW_HEIGHT 1080
+#define WINDOW_WIDTH  1920/2
+#define WINDOW_HEIGHT 1080/2
 
 // Workaround for tutorials prior to switching to GLFW
 int IsGLVersionHigher(int MajorVer, int MinorVer)
@@ -85,7 +85,7 @@ Tutorial19::Tutorial19()
 
     persProjInfo = { FOV, (float)WINDOW_WIDTH, (float)WINDOW_HEIGHT, zNear, zFar };
 
-    baseLight.AmbientIntensity = 1.0f;
+    baseLight.AmbientIntensity = 2.0f;
 }
 
 
@@ -114,7 +114,7 @@ bool Tutorial19::Init()
     pGameCamera = new Camera(WINDOW_WIDTH, WINDOW_HEIGHT, CameraPos, CameraTarget, CameraUp);
 
     pMesh = new BasicMesh();
-
+        
     if (!pMesh->LoadMesh("../Content/spider.obj")) {
         return false;
     }
@@ -128,7 +128,7 @@ bool Tutorial19::Init()
 
     pLightingTech->Enable();
 
-    pLightingTech->SetTextureUnit(COLOR_TEXTURE_UNIT_INDEX);
+    pLightingTech->SetTextureUnit(COLOR_TEXTURE_UNIT_INDEX); 
 
     return true;
 }
@@ -141,7 +141,7 @@ void Tutorial19::RenderSceneCB()
     pGameCamera->OnRender();
 
 #ifdef _WIN64
-    float YRotationAngle = 0.1f;
+    float YRotationAngle = 0.01f;
 #else
     float YRotationAngle = 1.0f;
 #endif

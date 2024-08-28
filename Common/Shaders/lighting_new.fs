@@ -650,7 +650,7 @@ void main()
     }
 
     if (EdgeDistance0.x >= 0) {
-	float d = min( EdgeDistance0.x, min(EdgeDistance0.y, EdgeDistance0.z ));
+	    float d = min( EdgeDistance0.x, min(EdgeDistance0.y, EdgeDistance0.z ));
 
         float mixVal = 0.0;
         if (d < gWireframeWidth - 1) {
